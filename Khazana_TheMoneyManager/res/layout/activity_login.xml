@@ -1,0 +1,231 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.huzaif.khazana.LoginActivity" >
+
+   <ScrollView
+    android:id="@+id/mainScrollView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	>
+
+    <RelativeLayout
+        android:id="@+id/relativelayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="5dp" >
+       
+        <TableLayout
+            android:id="@+id/tablelayoutlogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="30dp"
+            android:shrinkColumns="*"
+            android:stretchColumns="*"
+            android:visibility="visible" >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:padding="5dp" >
+
+                <EditText
+                    android:id="@+id/emailidlogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:hint="@string/emailhelptext"
+                    android:inputType="textEmailAddress"
+                    android:padding="8dp"
+                    android:textColorHint="#B8B8B8"
+                    android:background="#D7DBDE" 
+                    >
+
+                    <requestFocus />
+                </EditText>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <EditText
+                    android:id="@+id/passwordlogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:background="#D7DBDE"
+                    android:hint="@string/passwordhelp"
+                    android:inputType="numberPassword"
+                    android:maxLength="4"
+                    android:padding="8dp"
+                    android:textColorHint="#B8B8B8" />
+            </TableRow>
+
+            <TableRow android:paddingTop="20dp" >
+
+                <Button
+                    android:id="@+id/loginbutton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:onClick="logincheck"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="@string/login_lable"
+                    android:textColor="#B8B8B8"
+                    android:background="#475967" />
+            </TableRow>
+
+            <TableRow android:paddingTop="10dp" >
+
+                <Button
+                    android:id="@+id/registerbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:onClick="showregister"
+                    android:text="@string/register_lable"
+                    android:textColor="#FFFFFF" 
+                    android:background="#53AEFF"/>
+            </TableRow>
+        </TableLayout>
+
+        
+        
+        
+        
+        
+        
+        <TableLayout
+            android:id="@+id/tablelayoutregister"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="30dp"
+            android:shrinkColumns="*"
+            android:stretchColumns="*"
+            android:visibility="gone" >
+
+           <TableRow android:padding="5dp" >
+               
+           <RelativeLayout                    
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+			android:layout_gravity="center_vertical|center_horizontal"
+			>
+               
+                   <EditText
+                    android:id="@+id/emailidregister"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/emailhelptext"
+                    android:inputType="textEmailAddress"                    
+                    android:padding="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColorHint="#B8B8B8"
+                    android:background="#D7DBDE" />
+
+                <EditText
+                    android:id="@+id/firstnameregister"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/emailidregister"
+                    android:hint="@string/firstnamehint"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColorHint="#B8B8B8"
+                    android:background="#D7DBDE"/>
+
+                <EditText
+                    android:id="@+id/lastnameregister"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/firstnameregister"
+                    android:hint="@string/lastnamehint"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColorHint="#B8B8B8"
+                    android:background="#D7DBDE" /> 
+
+                <EditText
+                    android:id="@+id/loginpasswordregister"
+                    android:layout_below="@id/lastnameregister"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/passwordhint"
+                    android:inputType="numberPassword"
+                    android:layout_marginBottom="10dp"
+                    android:maxLength="4"
+                    android:padding="8dp"
+                    android:textColorHint="#B8B8B8"
+                    android:background="#D7DBDE"/>           
+             
+                <EditText
+                    android:id="@+id/confirmloginpasswordregister"
+                    android:layout_below="@id/loginpasswordregister"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/confirmpasswordhint"
+                    android:inputType="numberPassword"
+                    android:maxLength="4"
+                    android:padding="8dp"
+                    android:textColorHint="#B8B8B8"
+                    android:background="#D7DBDE"/>
+                
+                     
+                </RelativeLayout>
+            </TableRow>
+
+            <TableRow
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp" >
+                
+      <RelativeLayout                    
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+			android:layout_gravity="center_vertical|center_horizontal"
+			>
+                <Button
+                android:id="@+id/registerbutton1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:onClick="registerNewUser"
+                android:text="@string/register_lable"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColor="#FFFFFF" 
+                android:background="#53AEFF"
+                android:layout_marginRight="10dp"  />
+
+            <Button
+                android:id="@+id/loginbutton2"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/registerbutton1"
+                android:onClick="showLogin"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/login_lable"
+                android:textColor="#B8B8B8"
+                android:background="#475967"
+                android:layout_marginLeft="10dp"/>
+                </RelativeLayout>
+            </TableRow>
+            
+        </TableLayout>
+    </RelativeLayout>
+</ScrollView>
+
+</RelativeLayout>

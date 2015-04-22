@@ -1,0 +1,120 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.huzaif.khazana.AddTransactionActivity" >
+
+    <ScrollView
+    android:id="@+id/mainScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+	>
+	 <HorizontalScrollView 
+        android:id="@+id/horizontalView" 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"     
+        android:scrollbars="horizontal|vertical"   
+        android:layout_marginTop="5dp"
+        android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/linearlayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="5dp" 
+        android:orientation="vertical">
+        
+        <TextView 
+            android:id="@+id/text"            
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/helpText"
+	        android:textColor="#ff0000"
+            />
+		     <TimePicker
+		        android:id="@+id/timePicker1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+		        android:layout_marginTop="25dp"
+		        android:layout_marginBottom="25dp" />
+		
+		    <DatePicker
+		        android:id="@+id/datePicker1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:calendarViewShown="false"
+                    android:layout_gravity="center_horizontal"
+		        android:layout_marginTop="25dp"
+		        android:layout_marginBottom="25dp"/>
+
+		     <RadioGroup
+		        android:id="@+id/radioGroup"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent" 
+		        android:gravity="center"
+		        android:layout_marginTop="25dp"
+		        android:layout_marginBottom="25dp"
+		        android:padding="20dp"
+		         >
+
+		         <RadioButton
+		             android:id="@+id/radioCredit"
+		             android:text="@string/credit"
+		             android:textSize="20sp" />
+
+		         <RadioButton
+		             android:id="@+id/radioDebit"
+		             android:text="@string/debit"
+		             android:textSize="20sp" />
+		             </RadioGroup>
+             
+			     <EditText
+			      android:id="@+id/amount1"
+			      android:layout_width="250dp"
+			      android:layout_height="wrap_content"
+			      android:background="#D7DBDE"
+			      android:hint="@string/amount"
+			      android:inputType="number"
+                  android:padding="20dp"
+                  android:layout_gravity="center_horizontal"
+		          android:layout_marginTop="25dp"
+		          android:layout_marginBottom="25dp"
+			      android:textColorHint="#B8B8B8"                    
+			       />
+            
+	 			<EditText
+                    android:id="@+id/transactionDescription1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#D7DBDE"
+                    android:hint="@string/transactionDescription"
+                    android:inputType="textAutoCorrect|textAutoComplete|textMultiLine"
+                    android:minHeight="100dp"
+                    android:maxWidth="200dp"
+                    android:layout_gravity="center_horizontal"
+		            android:layout_margin="25dp"
+                    android:textColorHint="#B8B8B8"
+                    android:padding="10dp" />      
+                
+     			 <Button 
+                    android:id="@+id/submitButton"                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#D7DBDE"
+                    android:text="@string/submitButton"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="20dp"
+       	 			android:layout_marginTop="50dp" 
+       	 			android:layout_marginBottom="25dp" 
+       	 			android:onClick="addTransaction"
+                    />
+   
+   		</LinearLayout>
+	</HorizontalScrollView>
+  </ScrollView>
+</RelativeLayout>
